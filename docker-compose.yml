@@ -1,0 +1,30 @@
+version: "3"
+   
+services:
+  db:
+    image: mysql
+    ports:
+      - "5432:3306"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_DATABASE='todoapp'
+      - MYSQL_USER='root'
+      - MYSQL_PASSWORD='123456'
+      - MYSQL_ROOT_PASSWORD='123456'
+      - MYSQL_HOST=''
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - MYSQL_DATABASE='todoapp'
+      - MYSQL_USER='root'
+      - MYSQL_PASSWORD='123456'
+      - MYSQL_ROOT_PASSWORD='123456'
+      - MYSQL_HOST=''
+    depends_on:
+      - db
