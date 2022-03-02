@@ -1,0 +1,72 @@
+[
+    {
+        "id":"API 1",
+        "name":"Sign up",
+        "method":"POST",
+        "endpoint":"localhost:8000/signup/",
+        "description":"Đăng ký với thuộc tính username và password, hash bằng PBKDF2_SHA256"
+    },
+    {
+        "id":"API 2",
+        "name":"Sign in",
+        "method":"POST",
+        "endpoint":"localhost:8000/signin/",
+        "description":"Chức năng đăng nhập và nhận JWT Token với thư viện PyJWT có payload username"
+    },
+    {
+        "id":"API 3",
+        "name":"Add todo",
+        "method":"POST",
+        "endpoint":"localhost:8000/todo/",
+        "description":"Thêm sản phẩm với các thuộc tính name, description, dateofcompletion. Các thuộc tính còn lại default"
+    },
+    {
+        "id":"API 4",
+        "name":"Update todo",
+        "method":"PATCH",
+        "endpoint":"localhost:8000/todoid/",
+        "description":"Sửa name, description, dateofcompletion,status. "
+    },
+    {
+        "id":"API 5",
+        "name":"Remove todo",
+        "method":"DELETE",
+        "endpoint":"localhost:8000/todoid/",
+        "description":"Xoá một todo dựa trên id"
+    },
+    {
+        "id":"API 6",
+        "name":"Get all todo",
+        "method":"GET",
+        "endpoint":"localhost:8000/todo/",
+        "description":"Lấy tất cả todo có trong database"
+    },
+    {
+        "id":"API 7",
+        "name":"Get to do by id",
+        "method":"GET",
+        "endpoint":"localhost:8000/todoid/",
+        "description":"Lấy toàn bộ thuộc tính của một todo qua id"
+    },
+    {
+        "id":"API 8",
+        "name":"Get all user",
+        "method":"GET",
+        "endpoint":"localhost:8000/user/",
+        "description":"Lấy tất cả user có trong danh sách, không hiển thị mật khẩu và JWT"
+    },
+    {
+        "id":"API 9",
+        "name":"Assign todo",
+        "method":"POST",
+        "endpoint":"localhost:8000/assign/",
+        "description":"Chuyển todo của bản thân cho người khác, không được tự chuyển cho chính mình, hiện thực bằng JWT"
+    },
+    {
+        "id":"API 10",
+        "name":"Get all task by user",
+        "method":"GET",
+        "endpoint":"localhost:8000/useralltask/",
+        "description":"Lấy tất cả todo của user chỉ định bằng id"
+    }
+]

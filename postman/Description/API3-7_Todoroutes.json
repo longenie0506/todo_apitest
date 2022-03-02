@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "0b5f04ca-f483-4430-a6fa-2c8c5ac52b7a",
+		"name": "Todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API 3: Add todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Scratch Preparation\",\r\n    \"description\":\"School 9am-11am\",\r\n    \"userid\":\"longenie0506\",\r\n    \"assignedby\":null,\r\n    \"dateofcompletion\":\"2022-03-03\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/todo/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"todo",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add a todo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Coffee with Jennie\",\r\n    \"description\":\"Meet me at 7pm\",\r\n    \"userid\":\"longenie0506\",\r\n    \"dateofcompletion\":\"2022-03-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/todo/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Mar 2022 16:33:20 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "344"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 201,\n    \"message\": \"Add a todo successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Coffee with Jennie\",\n        \"description\": \"Meet me at 7pm\",\n        \"dateofcompletion\": \"2022-03-04\",\n        \"status\": \"NEW\",\n        \"dateofcreation\": \"2022-03-02T23:33:20.547899+07:00\",\n        \"dateofmodification\": \"2022-03-02T23:33:20.547940+07:00\",\n        \"userid\": \"longenie0506\",\n        \"assignedby\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "API 4: Update todo",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":3,\r\n    \"name\":\"Scratch advance\",\r\n    \"description\":\"Time's changed 01pm-03pm\",\r\n    \"status\":\"COMPLETE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/todoid/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"todoid",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update a todo",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":6,\r\n    \"description\":\"Jennie wants to meet at 4pm\",\r\n    \"status\":\"COMPLETE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/todoid/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todoid",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Mar 2022 16:34:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "365"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 201,\n    \"message\": \"Update a todo successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Coffee with Jennie\",\n        \"description\": \"Jennie wants to meet at 4pm\",\n        \"dateofcompletion\": \"2022-03-04\",\n        \"status\": \"COMPLETE\",\n        \"dateofcreation\": \"2022-03-02T23:33:20.547899+07:00\",\n        \"dateofmodification\": \"2022-03-02T23:34:33.064006+07:00\",\n        \"userid\": \"longenie0506\",\n        \"assignedby\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "API 5: Remove todo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/todo/remove-to-do",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"todo",
+						"remove-to-do"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Remove a todo",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/todoid/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todoid",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Mar 2022 16:35:28 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "42"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 201,\n    \"message\": \"Removed todo\"\n}"
+				}
+			]
+		},
+		{
+			"name": "API 6: All todos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxvbmdlbmllMDUwNiIsImV4cCI6MTY0NjI2Mzg2NSwiaWF0IjoxNjQ2MjYwMjY1fQ.tGQcYgHcvO2d5bOfgf6DIzh64g7HUTcZA7UBK73WsdE\n",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/todo/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"todo",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get all todos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/todo/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todo",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Mar 2022 16:34:52 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "873"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"name\": \"Scratch advance\",\n        \"description\": \"Time's changed 02pm-04pm\",\n        \"dateofcompletion\": \"2022-03-03\",\n        \"status\": \"COMPLETE\",\n        \"dateofcreation\": \"2022-03-02T21:58:14.271017+07:00\",\n        \"dateofmodification\": \"2022-03-02T22:24:20.654217+07:00\",\n        \"userid\": \"longenie05061\",\n        \"assignedby\": null\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Scratch Jr\",\n        \"description\": \"School 9am-11am\",\n        \"dateofcompletion\": \"2022-03-03\",\n        \"status\": \"NEW\",\n        \"dateofcreation\": \"2022-03-02T23:32:25.862913+07:00\",\n        \"dateofmodification\": \"2022-03-02T23:32:25.862974+07:00\",\n        \"userid\": \"longenie0506\",\n        \"assignedby\": null\n    },\n    {\n        \"id\": 6,\n        \"name\": \"Coffee with Jennie\",\n        \"description\": \"Jennie wants to meet at 4pm\",\n        \"dateofcompletion\": \"2022-03-04\",\n        \"status\": \"COMPLETE\",\n        \"dateofcreation\": \"2022-03-02T23:33:20.547899+07:00\",\n        \"dateofmodification\": \"2022-03-02T23:34:33.064006+07:00\",\n        \"userid\": \"longenie0506\",\n        \"assignedby\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "API 7: Todo by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImxvbmdlbmllMDUwNiIsImV4cCI6MTY0NjI2NTM1MywiaWF0IjoxNjQ2MjYxNzUzfQ.x_WwC3Q4H9Ke4K7aK45lvXzBnJePzh5w-JJ3wBfuqGU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/todoid/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"todoid",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get a todo",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/todoid/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"todoid",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Wed, 02 Mar 2022 16:35:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.8.10"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "367"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": 201,\n    \"message\": \"Retrieve a todo successfully\",\n    \"data\": {\n        \"id\": 6,\n        \"name\": \"Coffee with Jennie\",\n        \"description\": \"Jennie wants to meet at 4pm\",\n        \"dateofcompletion\": \"2022-03-04\",\n        \"status\": \"COMPLETE\",\n        \"dateofcreation\": \"2022-03-02T23:33:20.547899+07:00\",\n        \"dateofmodification\": \"2022-03-02T23:34:33.064006+07:00\",\n        \"userid\": \"longenie0506\",\n        \"assignedby\": null\n    }\n}"
+				}
+			]
+		}
+	]
+}
